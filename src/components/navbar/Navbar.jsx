@@ -11,6 +11,7 @@ import ElectronicLogo from "../../assets/electronic-logo.png";
 const Navbar = ({ history }) => {
   const goToRegistration = () => history.push("/selection");
   const goToLogin = () => history.push("/login");
+  const goToGuestLogin = () => history.push("/guest-login");
 
   return (
     <nav>
@@ -24,6 +25,9 @@ const Navbar = ({ history }) => {
           </NavbarButton>
           <NavbarButton onClick={goToLogin} type="text">
             Login
+          </NavbarButton>
+          <NavbarButton onClick={goToGuestLogin} type="text">
+            Login as Guest
           </NavbarButton>
         </ButtonContainer>
       </NavbarContainer>
