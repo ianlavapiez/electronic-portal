@@ -16,6 +16,7 @@ import {
   SelectionPage,
 } from "./pages/auth";
 import MarketsPage from "./pages/markets";
+import { AddProductPage, ProductsPage } from "./pages/products";
 
 const App = () => {
   const excludedPaths = ["/admin", "/admin-login"];
@@ -45,6 +46,8 @@ const App = () => {
           <Route component={AdminLoginPage} exact path="/admin-login" />
           <Route component={AdminPage} exact path="/admin" />
           <Route component={MarketsPage} exact path="/markets" />
+          <Route component={AddProductPage} exact path="/add-product" />
+          <Route component={ProductsPage} exact path="/your-products" />
           <Route component={FourOFourPage} />
         </Switch>
       </Suspense>
