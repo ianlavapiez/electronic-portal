@@ -26,6 +26,7 @@ import {
   RegistrationButton,
   RegistrationContainer,
 } from "./Registration.styles";
+import { auth } from "../../../firebase/firebase.utils";
 
 const ConsumerRegistration = ({
   error,
@@ -48,14 +49,20 @@ const ConsumerRegistration = ({
     }
 
     if (isSuccessful) {
-      restartUserReducerStart();
+      const currentUser = auth.currentUser;
 
-      history.push("/login");
+      if (!currentUser.emailVerified) {
+        currentUser.sendEmailVerification().then(() => {
+          fireAlert(
+            "You've successfully registered! Please verify your email before logging in.",
+            "success"
+          );
 
-      return fireAlert(
-        "You've successfully registered! Please verify your email before logging in.",
-        "success"
-      );
+          restartUserReducerStart();
+
+          history.push("/login");
+        });
+      }
     }
   }, [error, history, isSuccessful, restartUserReducerStart]);
 
