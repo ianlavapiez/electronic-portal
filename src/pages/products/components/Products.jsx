@@ -7,7 +7,7 @@ import {
 } from "./Products.styles";
 import ProductTable from "./ProductTable";
 
-const TransactionsPage = () => {
+const ProductsPage = () => {
   const history = useHistory();
 
   const goToAddProduct = () => history.push("/add-product");
@@ -21,4 +21,4 @@ const TransactionsPage = () => {
   );
 };
 
-export default TransactionsPage;
+export default ProductsPage;

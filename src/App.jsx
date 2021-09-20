@@ -17,6 +17,7 @@ import {
 } from "./pages/auth";
 import MarketsPage from "./pages/markets";
 import { AddProductPage, ProductsPage } from "./pages/products";
+import TransactionPage from "./pages/transaction-logs";
 
 const App = () => {
   const excludedPaths = ["/admin", "/admin-login"];
@@ -48,6 +49,7 @@ const App = () => {
           <Route component={MarketsPage} exact path="/markets" />
           <Route component={AddProductPage} exact path="/add-product" />
           <Route component={ProductsPage} exact path="/your-products" />
+          <Route component={TransactionPage} exact path="/transactions" />
           <Route component={FourOFourPage} />
         </Switch>
       </Suspense>

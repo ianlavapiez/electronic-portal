@@ -111,6 +111,7 @@ function* signUp({
             lastName,
             middleName,
             password,
+            type,
           },
         })
       );

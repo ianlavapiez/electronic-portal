@@ -17,11 +17,9 @@ const Navbar = ({ history, signOutStart, user }) => {
 
   const goToRegistration = () => history.push("/selection");
   const goToLogin = () => history.push("/login");
-  const goToGuestLogin = () => history.push("/guest-login");
   const goToTransactions = () => history.push("/transactions");
   const goToYourProducts = () => history.push("/your-products");
-  const goToMarketplace = () => history.push("/marketplace");
-  const goToMessages = () => history.push("/messages");
+  const goToMarketplace = () => history.push("/markets");
   const signOut = () => {
     signOutStart();
     setType(null);
@@ -54,9 +52,6 @@ const Navbar = ({ history, signOutStart, user }) => {
             <NavbarButton onClick={goToYourProducts} type="text">
               Your Products
             </NavbarButton>
-            <NavbarButton onClick={goToMessages} type="text">
-              Messages
-            </NavbarButton>
             <NavbarButton onClick={goToTransactions} type="text">
               Transaction Logs
             </NavbarButton>
@@ -79,9 +74,6 @@ const Navbar = ({ history, signOutStart, user }) => {
           <ButtonContainer>
             <NavbarButton onClick={goToMarketplace} type="text">
               Marketplace
-            </NavbarButton>
-            <NavbarButton onClick={goToMessages} type="text">
-              Messages
             </NavbarButton>
             <NavbarButton onClick={goToTransactions} type="text">
               Transaction Logs
@@ -107,9 +99,6 @@ const Navbar = ({ history, signOutStart, user }) => {
           </NavbarButton>
           <NavbarButton onClick={goToLogin} type="text">
             Login
-          </NavbarButton>
-          <NavbarButton onClick={goToGuestLogin} type="text">
-            Login as Guest
           </NavbarButton>
         </ButtonContainer>
       </NavbarContainer>
